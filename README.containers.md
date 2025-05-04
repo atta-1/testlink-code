@@ -1,4 +1,7 @@
-networks: 
+# Containers
+## compose
+```yml
+networks:
   testlink:
     name: testlink
 services:
@@ -28,7 +31,7 @@ services:
     - NODE_TLS_REJECT_UNAUTHORIZED=0
 
   app: &app
-    build: .
+    image: ghcr.io/neiesc/testlink-code:testlink_1_9_20_fixed
     restart: unless-stopped
     depends_on:
       db:
@@ -56,3 +59,4 @@ services:
 
 volumes:
   mysql:
+```
